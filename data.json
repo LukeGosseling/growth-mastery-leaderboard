@@ -489,6 +489,42 @@
         "1k_club"
       ],
       "niche": "General"
+    },
+    {
+      "id": 34,
+      "username": "Elevateshift™",
+      "handle": "@elevateshift",
+      "avatar": "avatars/elevateshift.jpg",
+      "followers": 763832,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": ["1k_club", "10k_club", "100k_club"],
+      "niche": "General"
+    },
+    {
+      "id": 35,
+      "username": "Because We're Females",
+      "handle": "@causewerefemales",
+      "avatar": "avatars/causewerefemales.jpg",
+      "followers": 574871,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": ["1k_club", "10k_club", "100k_club"],
+      "niche": "General"
+    },
+    {
+      "id": 36,
+      "username": "Art of Poets - Inspiring Quotes",
+      "handle": "@artofpoets",
+      "avatar": "avatars/artofpoets.jpg",
+      "followers": 324967,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": ["1k_club", "10k_club", "100k_club"],
+      "niche": "General"
     }
   ]
 }
