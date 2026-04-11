@@ -573,6 +573,30 @@
       "streak": 1,
       "badges": ["1k_club", "10k_club", "100k_club"],
       "niche": "General"
+    },
+    {
+      "id": 42,
+      "username": "MoisFearless | Self Improvement Content",
+      "handle": "@moisfearless",
+      "avatar": "avatars/moisfearless.jpg",
+      "followers": 1096051,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": ["1k_club", "10k_club", "100k_club"],
+      "niche": "General"
+    },
+    {
+      "id": 43,
+      "username": "Business | Inspire",
+      "handle": "@hustlingroute_",
+      "avatar": "avatars/hustlingroute_.jpg",
+      "followers": 503148,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": ["1k_club", "10k_club", "100k_club"],
+      "niche": "General"
     }
   ]
 }
