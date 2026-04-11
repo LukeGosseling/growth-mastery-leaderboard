@@ -1,0 +1,161 @@
+{
+  "lastUpdated": "2026-04-11T12:10:03.784779Z",
+  "members": [
+    {
+      "id": 1,
+      "username": "Comecou",
+      "handle": "@comecou",
+      "avatar": "",
+      "followers": 7165415,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 2,
+      "username": "Mindset Raptors",
+      "handle": "@mindsetraptors",
+      "avatar": "",
+      "followers": 1480853,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 3,
+      "username": "Business Edge X",
+      "handle": "@businessedgex",
+      "avatar": "",
+      "followers": 626206,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Finance"
+    },
+    {
+      "id": 4,
+      "username": "Opus Reality",
+      "handle": "@opusreality",
+      "avatar": "",
+      "followers": 991863,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 5,
+      "username": "The Philosopher Art",
+      "handle": "@thephilosophart",
+      "avatar": "",
+      "followers": 646383,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Lifestyle"
+    },
+    {
+      "id": 6,
+      "username": "Yoga Daily Practice",
+      "handle": "@yogadailypractice",
+      "avatar": "",
+      "followers": 2710723,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Health"
+    },
+    {
+      "id": 7,
+      "username": "Vawzen",
+      "handle": "@vawzen",
+      "avatar": "",
+      "followers": 0,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 0,
+      "badges": [],
+      "niche": "Lifestyle"
+    },
+    {
+      "id": 8,
+      "username": "Wealthy Motivated",
+      "handle": "@wealthymotivated",
+      "avatar": "",
+      "followers": 400293,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Finance"
+    },
+    {
+      "id": 9,
+      "username": "Execute",
+      "handle": "@execute",
+      "avatar": "",
+      "followers": 238446,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 10,
+      "username": "Wifi Aesthetics",
+      "handle": "@wifiaesthetics",
+      "avatar": "",
+      "followers": 1345705,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": [
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Lifestyle"
+    }
+  ]
+}

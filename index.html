@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROWTH MASTERY — ARCADE LEADERBOARD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a1a;
+      --bg-card: #12122a;
+      --border: #2a2a5a;
+      --neon-blue: #00f0ff;
+      --neon-pink: #ff00aa;
+      --neon-green: #39ff14;
+      --neon-yellow: #ffe600;
+      --neon-orange: #ff6600;
+      --neon-purple: #bf00ff;
+      --neon-red: #ff0040;
+      --text: #e0e0ff;
+      --text-dim: #6a6a9a;
+      --gold: #ffd700;
+      --silver: #c0c0c0;
+      --bronze: #cd7f32;
+      --pixel-font: 'Press Start 2P', monospace;
+      --terminal-font: 'VT323', monospace;
+    }
+
+    body {
+      font-family: var(--terminal-font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── CRT Scanline Overlay ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Animated BG Stars ── */
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle var(--dur) infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* ── Grid Floor ── */
+    .grid-floor {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35vh;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(0, 240, 255, 0.03) 100%),
+        repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.05) 0px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(0deg, rgba(0, 240, 255, 0.05) 0px, transparent 1px, transparent 60px);
+      transform: perspective(500px) rotateX(60deg);
+      transform-origin: bottom;
+      z-index: 0;
+    }
+
+    /* ── Container ── */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── Arcade Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding: 2rem;
+    }
+
+    .header-insert-coin {
+      font-family: var(--pixel-font);
+      font-size: 0.6rem;
+      color: var(--neon-yellow);
+      letter-spacing: 0.2em;
+      animation: blink 1s steps(1) infinite;
+      margin-bottom: 1.5rem;
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .header h1 {
+      font-family: var(--pixel-font);
+      font-size: clamp(1rem, 3.5vw, 1.8rem);
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+    }
+    .header h1 .neon-blue {
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue), 0 0 40px var(--neon-blue), 0 0 80px rgba(0, 240, 255, 0.3);
+    }
+    .header h1 .neon-pink {
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px var(--neon-pink), 0 0 40px var(--neon-pink), 0 0 80px rgba(255, 0, 170, 0.3);
+    }
+
+    .header-subtitle {
+      font-family: var(--terminal-font);
+      font-size: 1.4rem;
+      color: var(--text-dim);
+      margin-top: 0.75rem;
+      letter-spacing: 0.15em;
+    }
+
+    .header-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-family: var(--pixel-font);
+      font-size: 0.55rem;
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+      letter-spacing: 0.1em;
+    }
+    .header-live .dot {
+      width: 8px; height: 8px;
+      background: var(--neon-green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--neon-green);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    /* ── Stats HUD ── */
+    .hud {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hud-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hud-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .hud-card.hud-blue::before { background: var(--neon-blue); box-shadow: 0 0 10px var(--neon-blue); }
+    .hud-card.hud-green::before { background: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
+    .hud-card.hud-yellow::before { background: var(--neon-yellow); box-shadow: 0 0 10px var(--neon-yellow); }
+    .hud-card.hud-pink::before { background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); }
+
+    .hud-value {
+      font-family: var(--pixel-font);
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+    }
+    .hud-blue .hud-value { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+    .hud-green .hud-value { color: var(--neon-green); text-shadow: 0 0 10px var(--neon-green); }
+    .hud-yellow .hud-value { color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-yellow); }
+    .hud-pink .hud-value { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+
+    .hud-label {
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Controls ── */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      position: relative;
+    }
+    .search-box::before {
+      content: '>';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--neon-green);
+      font-family: var(--terminal-font);
+      font-size: 1.4rem;
+      text-shadow: 0 0 5px var(--neon-green);
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.75rem 1rem 0.75rem 2rem;
+      color: var(--neon-green);
+      font-family: var(--terminal-font);
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input::placeholder { color: var(--text-dim); }
+    .search-box input:focus { border-color: var(--neon-green); box-shadow: 0 0 8px rgba(57, 255, 20, 0.15); }
+
+    .ctrl-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.7rem 1.1rem;
+      color: var(--text-dim);
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-transform: uppercase;
+    }
+    .ctrl-btn:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+    .ctrl-btn.active {
+      border-color: var(--neon-pink);
+      color: var(--neon-pink);
+      box-shadow: 0 0 10px rgba(255, 0, 170, 0.2);
+      text-shadow: 0 0 5px var(--neon-pink);
+    }
+
+    .sort-select {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      color: var(--neon-blue);
+      font-family: var(--terminal-font);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      outline: none;
+    }
+    .sort-select:focus { border-color: var(--neon-blue); }
+    .sort-select option { background: var(--bg); }
+
+    /* ── Podium / Top 3 Arcade Style ── */
+    .podium {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .podium-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .podium-card:hover { transform: translateY(-4px); }
+
+    .podium-card.gold {
+      grid-column: 2;
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15), inset 0 0 30px rgba(255, 215, 0, 0.03);
+    }
+    .podium-card.silver {
+      grid-column: 1;
+      border-color: var(--silver);
+      box-shadow: 0 0 15px rgba(192, 192, 192, 0.1);
+    }
+    .podium-card.bronze {
+      grid-column: 3;
+      border-color: var(--bronze);
+      box-shadow: 0 0 15px rgba(205, 127, 50, 0.1);
+    }
+
+    .podium-rank {
+      font-family: var(--pixel-font);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .podium-card.gold .podium-rank { color: var(--gold); text-shadow: 0 0 15px var(--gold); }
+    .podium-card.silver .podium-rank { color: var(--silver); text-shadow: 0 0 10px var(--silver); }
+    .podium-card.bronze .podium-rank { color: var(--bronze); text-shadow: 0 0 10px var(--bronze); }
+
+    .podium-avatar {
+      width: 64px; height: 64px;
+      border-radius: 4px;
+      margin: 0 auto 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--pixel-font);
+      font-size: 1rem;
+      font-weight: 800;
+      position: relative;
+      image-rendering: pixelated;
+    }
+    .podium-card.gold .podium-avatar {
+      background: linear-gradient(135deg, #332800, #665200);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    .podium-card.silver .podium-avatar {
+      background: linear-gradient(135deg, #222, #444);
+      border: 2px solid var(--silver);
+      color: var(--silver);
+    }
+    .podium-card.bronze .podium-avatar {
+      background: linear-gradient(135deg, #2a1a00, #4d3000);
+      border: 2px solid var(--bronze);
+      color: var(--bronze);
+    }
+
+    .podium-level-badge {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: var(--bg);
+      border: 2px solid var(--neon-purple);
+      border-radius: 4px;
+      width: 24px; height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--pixel-font);
+      font-size: 0.45rem;
+      color: var(--neon-purple);
+      text-shadow: 0 0 5px var(--neon-purple);
+    }
+
+    .podium-name {
+      font-family: var(--pixel-font);
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .podium-handle {
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .podium-score {
+      font-family: var(--pixel-font);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+    }
+    .podium-card.gold .podium-score { color: var(--gold); text-shadow: 0 0 8px var(--gold); }
+    .podium-card.silver .podium-score { color: var(--silver); }
+    .podium-card.bronze .podium-score { color: var(--bronze); }
+
+    .podium-growth {
+      font-family: var(--terminal-font);
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+      letter-spacing: 0.05em;
+    }
+    .growth-up { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green); }
+    .growth-down { color: var(--neon-red); }
+
+    .podium-badges {
+      display: flex;
+      gap: 0.3rem;
+      justify-content: center;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Leaderboard Table ── */
+    .leaderboard {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .leaderboard-title {
+      font-family: var(--pixel-font);
+      font-size: 0.65rem;
+      text-align: center;
+      padding: 1rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .leaderboard-header {
+      display: grid;
+      grid-template-columns: 55px 1fr 130px 120px 90px 100px;
+      padding: 0.75rem 1.25rem;
+      font-family: var(--pixel-font);
+      font-size: 0.45rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .leaderboard-row {
+      display: grid;
+      grid-template-columns: 55px 1fr 130px 120px 90px 100px;
+      padding: 0.9rem 1.25rem;
+      align-items: center;
+      border-bottom: 1px solid rgba(42, 42, 90, 0.5);
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+    .leaderboard-row:last-child { border-bottom: none; }
+    .leaderboard-row:hover {
+      background: rgba(0, 240, 255, 0.03);
+      box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.02);
+    }
+
+    .rank {
+      font-family: var(--pixel-font);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+    .rank-4 { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); }
+
+    .member-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .member-avatar {
+      width: 36px; height: 36px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+      flex-shrink: 0;
+      image-rendering: pixelated;
+    }
+    .member-details { min-width: 0; }
+    .member-name {
+      font-family: var(--pixel-font);
+      font-size: 0.55rem;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .member-handle {
+      color: var(--text-dim);
+      font-size: 1rem;
+    }
+
+    .member-followers {
+      font-family: var(--pixel-font);
+      font-size: 0.7rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+    }
+    .member-growth {
+      font-family: var(--terminal-font);
+      font-size: 1.15rem;
+      letter-spacing: 0.03em;
+    }
+    .member-streak {
+      font-family: var(--pixel-font);
+      font-size: 0.55rem;
+      color: var(--neon-orange);
+      text-shadow: 0 0 5px rgba(255, 102, 0, 0.3);
+    }
+    .member-level {
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+    }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-family: var(--pixel-font);
+      font-size: 0.4rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid;
+    }
+    .badge-founder { border-color: var(--neon-purple); color: var(--neon-purple); background: rgba(191, 0, 255, 0.1); }
+    .badge-100k_club { border-color: var(--gold); color: var(--gold); background: rgba(255, 215, 0, 0.1); }
+    .badge-10k_club { border-color: var(--neon-green); color: var(--neon-green); background: rgba(57, 255, 20, 0.1); }
+    .badge-1k_club { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(0, 240, 255, 0.1); }
+    .badge-mentor { border-color: var(--neon-pink); color: var(--neon-pink); background: rgba(255, 0, 170, 0.1); }
+    .badge-rising_star { border-color: var(--neon-yellow); color: var(--neon-yellow); background: rgba(255, 230, 0, 0.1); }
+    .badge-consistent { border-color: var(--neon-green); color: var(--neon-green); background: rgba(57, 255, 20, 0.1); }
+    .badge-fastest_grower { border-color: var(--neon-red); color: var(--neon-red); background: rgba(255, 0, 64, 0.1); }
+    .badge-newcomer { border-color: var(--neon-blue); color: var(--neon-blue); background: rgba(0, 240, 255, 0.1); }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .modal-overlay.active { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--bg);
+      border: 2px solid var(--neon-blue);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), inset 0 0 30px rgba(0, 240, 255, 0.02);
+      border-radius: 4px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 480px;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.3s;
+    }
+    .modal-overlay.active .modal { transform: translateY(0) scale(1); }
+
+    .modal-close {
+      float: right;
+      background: none;
+      border: 1px solid var(--neon-red);
+      color: var(--neon-red);
+      font-family: var(--pixel-font);
+      font-size: 0.6rem;
+      padding: 0.3rem 0.5rem;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .modal-close:hover { background: rgba(255, 0, 64, 0.15); }
+
+    .modal-avatar {
+      width: 72px; height: 72px;
+      border-radius: 4px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--pixel-font);
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, #1a0033, #330066);
+      border: 2px solid var(--neon-purple);
+      color: var(--neon-purple);
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.2);
+    }
+
+    .modal h2 {
+      text-align: center;
+      font-family: var(--pixel-font);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .modal .modal-handle {
+      text-align: center;
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .xp-bar-wrap { margin: 1.25rem 0; }
+    .xp-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--pixel-font);
+      font-size: 0.4rem;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+    .xp-bar {
+      width: 100%;
+      height: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+    .xp-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+      border-radius: 2px;
+      transition: width 1s ease;
+      position: relative;
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+    /* Pixel-style segments on XP bar */
+    .xp-fill::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 8px,
+        rgba(0, 0, 0, 0.3) 8px,
+        rgba(0, 0, 0, 0.3) 10px
+      );
+    }
+
+    .modal-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .modal-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .modal-stat .val {
+      font-family: var(--pixel-font);
+      font-size: 0.75rem;
+    }
+    .modal-stat .lbl {
+      font-family: var(--pixel-font);
+      font-size: 0.35rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.4rem;
+    }
+
+    .modal-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--neon-green);
+      border-radius: 4px;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--terminal-font);
+      font-size: 1.1rem;
+      z-index: 200;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast-icon { font-size: 1.2rem; }
+
+    /* ── Updated ── */
+    .last-updated {
+      text-align: center;
+      color: var(--text-dim);
+      font-family: var(--pixel-font);
+      font-size: 0.45rem;
+      margin-top: 2rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Coin animation ── */
+    .coin-burst {
+      position: fixed;
+      pointer-events: none;
+      z-index: 300;
+      font-size: 1.5rem;
+      animation: coinFly 0.8s ease-out forwards;
+    }
+    @keyframes coinFly {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-80px) scale(0.5); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .podium { grid-template-columns: 1fr; gap: 0.75rem; }
+      .podium-card.gold, .podium-card.silver, .podium-card.bronze { grid-column: 1; grid-row: auto; }
+      .podium-card.gold { order: 0; }
+      .podium-card.silver { order: 1; }
+      .podium-card.bronze { order: 2; }
+
+      .leaderboard-header,
+      .leaderboard-row {
+        grid-template-columns: 40px 1fr 100px 80px;
+      }
+      .leaderboard-header > *:nth-child(5),
+      .leaderboard-header > *:nth-child(6),
+      .leaderboard-row > *:nth-child(5),
+      .leaderboard-row > *:nth-child(6) { display: none; }
+
+      .hud { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 1rem 0.75rem 3rem; }
+      .leaderboard-header,
+      .leaderboard-row {
+        grid-template-columns: 32px 1fr 80px;
+        padding: 0.75rem;
+      }
+      .leaderboard-header > *:nth-child(4),
+      .leaderboard-row > *:nth-child(4) { display: none; }
+    }
+
+    /* ── Entry animations ── */
+    .fade-in {
+      animation: fadeIn 0.5s ease both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .s1 { animation-delay: 0.05s; }
+    .s2 { animation-delay: 0.1s; }
+    .s3 { animation-delay: 0.15s; }
+    .s4 { animation-delay: 0.2s; }
+  </style>
+</head>
+<body>
+  <!-- Starfield -->
+  <div class="stars" id="stars"></div>
+  <div class="grid-floor"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header fade-in">
+      <div class="header-insert-coin">INSERT COIN TO PLAY</div>
+      <h1>
+        <span class="neon-blue">GROWTH</span>
+        <span class="neon-pink">MASTERY</span>
+      </h1>
+      <div class="header-subtitle">// HIGH SCORE LEADERBOARD //</div>
+      <div class="header-live"><span class="dot"></span> LIVE — UPDATED DAILY</div>
+    </header>
+
+    <!-- HUD -->
+    <div class="hud" id="statsBar"></div>
+
+    <!-- Controls -->
+    <div class="controls fade-in s2">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="SEARCH PLAYERS...">
+      </div>
+      <select class="sort-select" id="sortSelect">
+        <option value="followers">SORT: FOLLOWERS</option>
+        <option value="growth">SORT: GROWTH</option>
+        <option value="growth_pct">SORT: GROWTH %</option>
+        <option value="streak">SORT: STREAK</option>
+        <option value="level">SORT: LEVEL</option>
+      </select>
+      <button class="ctrl-btn active" data-filter="all">ALL</button>
+      <button class="ctrl-btn" data-filter="10k+">10K+</button>
+      <button class="ctrl-btn" data-filter="1k-10k">1K-10K</button>
+      <button class="ctrl-btn" data-filter="<1k">&lt;1K</button>
+    </div>
+
+    <!-- Podium -->
+    <div class="podium fade-in s3" id="podium"></div>
+
+    <!-- Leaderboard -->
+    <div class="leaderboard fade-in s4">
+      <div class="leaderboard-title">PLAYER RANKINGS</div>
+      <div class="leaderboard-header">
+        <div>RNK</div>
+        <div>PLAYER</div>
+        <div>SCORE</div>
+        <div>+/-</div>
+        <div>COMBO</div>
+        <div>LVL</div>
+      </div>
+      <div id="leaderboardBody"></div>
+    </div>
+
+    <div class="last-updated" id="lastUpdated"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast-icon"></span>
+    <span class="toast-text"></span>
+  </div>
+
+  <script>
+    // ── Generate starfield ──
+    (function() {
+      const container = document.getElementById('stars');
+      for (let i = 0; i < 120; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.setProperty('--dur', (1.5 + Math.random() * 3) + 's');
+        star.style.animationDelay = Math.random() * 3 + 's';
+        star.style.width = star.style.height = (1 + Math.random() * 2) + 'px';
+        container.appendChild(star);
+      }
+    })();
+
+    // ── Gamification ──
+    const LEVELS = [
+      { name: 'NOOB',        min: 0,       color: '#6a6a9a', icon: '🌱', tier: 1 },
+      { name: 'PLAYER',      min: 500,     color: '#00f0ff', icon: '🎮', tier: 2 },
+      { name: 'WARRIOR',     min: 1000,    color: '#39ff14', icon: '⚔️',  tier: 3 },
+      { name: 'CHAMPION',    min: 5000,    color: '#6366f1', icon: '🛡️',  tier: 4 },
+      { name: 'MASTER',      min: 10000,   color: '#ff6600', icon: '🔥', tier: 5 },
+      { name: 'LEGEND',      min: 25000,   color: '#ff00aa', icon: '💀', tier: 6 },
+      { name: 'ELITE',       min: 50000,   color: '#ff0040', icon: '👾', tier: 7 },
+      { name: 'GOD MODE',    min: 100000,  color: '#ffd700', icon: '💎', tier: 8 },
+    ];
+
+    const BADGE_CONFIG = {
+      founder:        { label: 'FOUNDER',   icon: '👑' },
+      '100k_club':    { label: '100K',      icon: '💎' },
+      '10k_club':     { label: '10K',       icon: '⭐' },
+      '1k_club':      { label: '1K',        icon: '📈' },
+      mentor:         { label: 'MENTOR',    icon: '🎓' },
+      rising_star:    { label: 'RISING',    icon: '🌟' },
+      consistent:     { label: 'STREAK',    icon: '🎯' },
+      fastest_grower: { label: 'SPEED',     icon: '🚀' },
+      newcomer:       { label: 'NEW',       icon: '👋' },
+    };
+
+    const NICHE_COLORS = {
+      'Personal Brand': '#bf00ff', 'Fitness': '#39ff14', 'Finance': '#ffd700',
+      'Lifestyle': '#ff00aa', 'Tech': '#00f0ff', 'Health': '#39ff14',
+      'Travel': '#bf00ff', 'Food': '#ff6600', 'Gaming': '#ff0040', 'Fashion': '#ff00aa',
+    };
+
+    let members = [];
+    let currentSort = 'followers';
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function getLevel(f) { let l = LEVELS[0]; for (const x of LEVELS) if (f >= x.min) l = x; return l; }
+    function getNextLevel(f) { for (const l of LEVELS) if (f < l.min) return l; return null; }
+    function getLevelIdx(f) { let i = 0; for (let j = 0; j < LEVELS.length; j++) if (f >= LEVELS[j].min) i = j; return i; }
+    function getXP(f) {
+      const l = getLevel(f), n = getNextLevel(f);
+      if (!n) return 100;
+      return Math.min(100, Math.round(((f - l.min) / (n.min - l.min)) * 100));
+    }
+    function fmt(n) {
+      if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+      if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+      return n.toString();
+    }
+    function growth(m) { return m.followers - m.previousFollowers; }
+    function growthPct(m) { return m.previousFollowers ? ((m.followers - m.previousFollowers) / m.previousFollowers * 100) : 0; }
+    function initials(n) { return n.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase(); }
+    function nc(n) { return NICHE_COLORS[n] || '#00f0ff'; }
+
+    async function loadData() {
+      try {
+        const r = await fetch('data.json?t=' + Date.now());
+        const d = await r.json();
+        members = d.members;
+        document.getElementById('lastUpdated').textContent =
+          'LAST UPDATE: ' + new Date(d.lastUpdated).toLocaleString().toUpperCase();
+        render();
+        showToast('🕹️', 'LEADERBOARD DATA LOADED');
+      } catch (e) {
+        console.error(e);
+        showToast('⚠️', 'FAILED TO LOAD DATA');
+      }
+    }
+
+    function getFiltered() {
+      let f = [...members];
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        f = f.filter(m => m.username.toLowerCase().includes(q) || m.handle.toLowerCase().includes(q) || m.niche.toLowerCase().includes(q));
+      }
+      if (currentFilter === '10k+') f = f.filter(m => m.followers >= 10000);
+      else if (currentFilter === '1k-10k') f = f.filter(m => m.followers >= 1000 && m.followers < 10000);
+      else if (currentFilter === '<1k') f = f.filter(m => m.followers < 1000);
+
+      f.sort((a, b) => {
+        switch (currentSort) {
+          case 'growth': return growth(b) - growth(a);
+          case 'growth_pct': return growthPct(b) - growthPct(a);
+          case 'streak': return b.streak - a.streak;
+          case 'level': return getLevelIdx(b.followers) - getLevelIdx(a.followers);
+          default: return b.followers - a.followers;
+        }
+      });
+      return f;
+    }
+
+    function renderStats() {
+      const tot = members.reduce((s, m) => s + m.followers, 0);
+      const totG = members.reduce((s, m) => s + growth(m), 0);
+      const avgG = members.length ? (members.reduce((s, m) => s + growthPct(m), 0) / members.length).toFixed(1) : 0;
+      document.getElementById('statsBar').innerHTML = `
+        <div class="hud-card hud-blue fade-in s1"><div class="hud-value">${members.length}</div><div class="hud-label">PLAYERS</div></div>
+        <div class="hud-card hud-green fade-in s2"><div class="hud-value">${fmt(tot)}</div><div class="hud-label">TOTAL SCORE</div></div>
+        <div class="hud-card hud-yellow fade-in s3"><div class="hud-value">+${fmt(totG)}</div><div class="hud-label">DAILY XP</div></div>
+        <div class="hud-card hud-pink fade-in s4"><div class="hud-value">${avgG}%</div><div class="hud-label">AVG POWER</div></div>
+      `;
+    }
+
+    function renderPodium() {
+      const top3 = [...members].sort((a, b) => b.followers - a.followers).slice(0, 3);
+      const cls = ['gold', 'silver', 'bronze'];
+      const icons = ['🏆', '🥈', '🥉'];
+
+      document.getElementById('podium').innerHTML = top3.map((m, i) => {
+        const g = growth(m);
+        return `
+          <div class="podium-card ${cls[i]}" onclick="showModal(${m.id}); spawnCoins(event)">
+            <div class="podium-rank">${icons[i]}</div>
+            <div class="podium-avatar">
+              ${initials(m.username)}
+              <span class="podium-level-badge">${getLevelIdx(m.followers) + 1}</span>
+            </div>
+            <div class="podium-name">${m.username.toUpperCase()}</div>
+            <div class="podium-handle">${m.handle}</div>
+            <div class="podium-score">${fmt(m.followers)}</div>
+            <div class="podium-growth ${g >= 0 ? 'growth-up' : 'growth-down'}">
+              ${g >= 0 ? '▲' : '▼'} ${fmt(Math.abs(g))}
+            </div>
+            <div class="podium-badges">
+              ${m.badges.map(b => `<span class="badge badge-${b}">${BADGE_CONFIG[b]?.icon || ''} ${BADGE_CONFIG[b]?.label || b}</span>`).join('')}
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function renderLeaderboard() {
+      const filtered = getFiltered();
+      const allByF = [...members].sort((a, b) => b.followers - a.followers);
+      const rankMap = {}; allByF.forEach((m, i) => rankMap[m.id] = i + 1);
+      const skip = (currentFilter === 'all' && currentSort === 'followers' && !searchQuery) ? 3 : 0;
+      const rows = filtered.slice(skip);
+
+      document.getElementById('leaderboardBody').innerHTML = rows.map((m, i) => {
+        const level = getLevel(m.followers);
+        const g = growth(m);
+        const gp = growthPct(m);
+        const rank = rankMap[m.id] || (skip + i + 1);
+        const c = nc(m.niche);
+
+        return `
+          <div class="leaderboard-row" onclick="showModal(${m.id}); spawnCoins(event)" style="animation: fadeIn 0.3s ease ${i * 0.04}s both">
+            <div class="rank ${rank <= 5 ? 'rank-4' : ''}">#${rank}</div>
+            <div class="member-info">
+              <div class="member-avatar" style="background: ${c}15; color: ${c}; border: 1px solid ${c}40">${initials(m.username)}</div>
+              <div class="member-details">
+                <div class="member-name">${m.username.toUpperCase()}</div>
+                <div class="member-handle">${m.handle} // ${m.niche}</div>
+              </div>
+            </div>
+            <div class="member-followers">${fmt(m.followers)}</div>
+            <div class="member-growth ${g >= 0 ? 'growth-up' : 'growth-down'}">
+              ${g >= 0 ? '▲' : '▼'} ${fmt(Math.abs(g))} (${gp.toFixed(1)}%)
+            </div>
+            <div class="member-streak">x${m.streak}</div>
+            <div class="member-level" style="color: ${level.color}; text-shadow: 0 0 5px ${level.color}40">
+              ${level.icon} ${level.name}
+            </div>
+          </div>`;
+      }).join('');
+
+      if (!rows.length) {
+        document.getElementById('leaderboardBody').innerHTML = `
+          <div style="padding: 2rem; text-align: center; color: var(--text-dim); font-family: var(--pixel-font); font-size: 0.55rem;">
+            NO PLAYERS FOUND
+          </div>`;
+      }
+    }
+
+    function showModal(id) {
+      const m = members.find(x => x.id === id);
+      if (!m) return;
+      const level = getLevel(m.followers), next = getNextLevel(m.followers);
+      const xp = getXP(m.followers), g = growth(m), gp = growthPct(m);
+
+      document.getElementById('modal').innerHTML = `
+        <button class="modal-close" onclick="closeModal()">ESC</button>
+        <div class="modal-avatar">${initials(m.username)}</div>
+        <h2>${m.username.toUpperCase()}</h2>
+        <div class="modal-handle">${m.handle} // ${m.niche}</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-label">
+            <span>${level.icon} ${level.name} (LV.${getLevelIdx(m.followers) + 1})</span>
+            <span>${next ? next.icon + ' ' + next.name : '💎 MAX LEVEL'}</span>
+          </div>
+          <div class="xp-bar"><div class="xp-fill" style="width: ${xp}%"></div></div>
+          <div class="xp-label" style="margin-top: 0.3rem">
+            <span>${fmt(m.followers)} XP</span>
+            <span>${next ? fmt(next.min) + ' TO LEVEL UP' : 'GOD MODE UNLOCKED'}</span>
+          </div>
+        </div>
+        <div class="modal-stats">
+          <div class="modal-stat"><div class="val" style="color:var(--neon-blue);text-shadow:0 0 8px var(--neon-blue)">${fmt(m.followers)}</div><div class="lbl">SCORE</div></div>
+          <div class="modal-stat"><div class="val" style="color:${g >= 0 ? 'var(--neon-green)' : 'var(--neon-red)'}">${g >= 0 ? '+' : ''}${fmt(g)}</div><div class="lbl">DAILY</div></div>
+          <div class="modal-stat"><div class="val" style="color:var(--neon-orange);text-shadow:0 0 8px rgba(255,102,0,0.3)">x${m.streak}</div><div class="lbl">COMBO</div></div>
+          <div class="modal-stat"><div class="val" style="color:var(--neon-pink)">${gp.toFixed(1)}%</div><div class="lbl">POWER</div></div>
+        </div>
+        <div class="modal-badges">
+          ${m.badges.map(b => `<span class="badge badge-${b}">${BADGE_CONFIG[b]?.icon || ''} ${BADGE_CONFIG[b]?.label || b}</span>`).join('')}
+        </div>`;
+
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
+
+    // ── Coin burst effect ──
+    function spawnCoins(e) {
+      const coins = ['🪙', '⭐', '💰'];
+      for (let i = 0; i < 5; i++) {
+        const coin = document.createElement('div');
+        coin.className = 'coin-burst';
+        coin.textContent = coins[Math.floor(Math.random() * coins.length)];
+        coin.style.left = (e.clientX + (Math.random() - 0.5) * 60) + 'px';
+        coin.style.top = (e.clientY + (Math.random() - 0.5) * 30) + 'px';
+        coin.style.animationDelay = (i * 0.08) + 's';
+        document.body.appendChild(coin);
+        setTimeout(() => coin.remove(), 1000);
+      }
+    }
+
+    function showToast(icon, text) {
+      const t = document.getElementById('toast');
+      t.querySelector('.toast-icon').textContent = icon;
+      t.querySelector('.toast-text').textContent = text;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    function render() { renderStats(); renderPodium(); renderLeaderboard(); }
+
+    // Events
+    document.getElementById('searchInput').addEventListener('input', e => { searchQuery = e.target.value; renderLeaderboard(); });
+    document.getElementById('sortSelect').addEventListener('change', e => { currentSort = e.target.value; render(); });
+    document.querySelectorAll('.ctrl-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.ctrl-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        currentFilter = b.dataset.filter;
+        render();
+      });
+    });
+    document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    setInterval(loadData, 5 * 60 * 1000);
+    loadData();
+  </script>
+</body>
+</html>
