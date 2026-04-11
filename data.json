@@ -633,6 +633,18 @@
         "1k_club"
       ],
       "niche": "General"
+    },
+    {
+      "id": 44,
+      "username": "Harry Words",
+      "handle": "@words.of.harry",
+      "avatar": "avatars/words.of.harry.jpg",
+      "followers": 213803,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 1,
+      "badges": ["1k_club", "10k_club", "100k_club"],
+      "niche": "General"
     }
   ]
 }
