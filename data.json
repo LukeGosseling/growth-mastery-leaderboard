@@ -156,6 +156,52 @@
         "100k_club"
       ],
       "niche": "Lifestyle"
+    },
+    {
+      "id": 11,
+      "username": "Women Empowerment | Motivation | Success",
+      "handle": "@femalevalues",
+      "avatar": "",
+      "followers": 273165,
+      "previousFollowers": 273165,
+      "joinedDate": "2026-04-11",
+      "streak": 0,
+      "badges": [
+        "100k_club",
+        "10k_club",
+        "1k_club"
+      ],
+      "niche": "General"
+    },
+    {
+      "id": 12,
+      "username": "brandify.idead",
+      "handle": "@brandify.idead",
+      "avatar": "",
+      "followers": 0,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-11",
+      "streak": 0,
+      "badges": [
+        "newcomer"
+      ],
+      "niche": "General"
+    },
+    {
+      "id": 13,
+      "username": "Victorian Poetry",
+      "handle": "@victorianpoetry",
+      "avatar": "",
+      "followers": 1081289,
+      "previousFollowers": 1081289,
+      "joinedDate": "2026-04-11",
+      "streak": 0,
+      "badges": [
+        "100k_club",
+        "10k_club",
+        "1k_club"
+      ],
+      "niche": "General"
     }
   ]
 }
