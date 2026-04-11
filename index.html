@@ -345,6 +345,12 @@
       font-weight: 800;
       position: relative;
       image-rendering: pixelated;
+      overflow: hidden;
+    }
+    .podium-avatar img, .member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .podium-card.gold .podium-avatar {
       background: linear-gradient(135deg, #332800, #665200);
@@ -486,6 +492,7 @@
       font-family: var(--pixel-font);
       font-size: 0.5rem;
       flex-shrink: 0;
+      overflow: hidden;
       image-rendering: pixelated;
     }
     .member-details { min-width: 0; }
@@ -980,7 +987,7 @@
           <div class="podium-card ${cls[i]}" onclick="showModal(${m.id}); spawnCoins(event)">
             <div class="podium-rank">${icons[i]}</div>
             <div class="podium-avatar">
-              ${initials(m.username)}
+              ${m.avatar ? `<img src="${m.avatar}" alt="${m.username}">` : initials(m.username)}
               <span class="podium-level-badge">${getLevelIdx(m.followers) + 1}</span>
             </div>
             <div class="podium-name">${m.username.toUpperCase()}</div>
@@ -1014,7 +1021,7 @@
           <div class="leaderboard-row" onclick="showModal(${m.id}); spawnCoins(event)" style="animation: fadeIn 0.3s ease ${i * 0.04}s both">
             <div class="rank ${rank <= 5 ? 'rank-4' : ''}">#${rank}</div>
             <div class="member-info">
-              <div class="member-avatar" style="background: ${c}15; color: ${c}; border: 1px solid ${c}40">${initials(m.username)}</div>
+              <div class="member-avatar" style="background: ${c}15; color: ${c}; border: 1px solid ${c}40">${m.avatar ? `<img src="${m.avatar}" alt="${m.username}">` : initials(m.username)}</div>
               <div class="member-details">
                 <div class="member-name">${m.username.toUpperCase()}</div>
                 <div class="member-handle">${m.handle} // ${m.niche}</div>
@@ -1047,7 +1054,7 @@
 
       document.getElementById('modal').innerHTML = `
         <button class="modal-close" onclick="closeModal()">ESC</button>
-        <div class="modal-avatar">${initials(m.username)}</div>
+        <div class="modal-avatar">${m.avatar ? `<img src="${m.avatar}" alt="${m.username}" style="width:100%;height:100%;object-fit:cover;border-radius:4px">` : initials(m.username)}</div>
         <h2>${m.username.toUpperCase()}</h2>
         <div class="modal-handle">${m.handle} // ${m.niche}</div>
         <div class="xp-bar-wrap">
