@@ -775,6 +775,142 @@
       .leaderboard-row > *:nth-child(4) { display: none; }
     }
 
+    /* ── News Ticker ── */
+    .ticker-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: linear-gradient(90deg, rgba(0,240,255,0.05), rgba(255,0,170,0.05), rgba(0,240,255,0.05));
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .ticker-wrap::before, .ticker-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 40px;
+      z-index: 2;
+    }
+    .ticker-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .ticker-wrap::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+
+    .ticker-label {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background: var(--neon-pink);
+      color: #000;
+      font-family: var(--pixel-font);
+      font-size: 0.45rem;
+      padding: 0 0.75rem;
+      display: flex;
+      align-items: center;
+      z-index: 3;
+      letter-spacing: 0.1em;
+      text-shadow: none;
+    }
+
+    .ticker {
+      display: flex;
+      animation: tickerScroll 30s linear infinite;
+      padding: 0.6rem 0;
+    }
+    .ticker:hover { animation-play-state: paused; }
+
+    .ticker-item {
+      white-space: nowrap;
+      padding: 0 2rem;
+      font-family: var(--terminal-font);
+      font-size: 1.1rem;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+    .ticker-item .highlight { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green); }
+    .ticker-item .pink { color: var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink); }
+    .ticker-item .gold { color: var(--gold); text-shadow: 0 0 5px var(--gold); }
+    .ticker-item .sep { color: var(--text-dim); margin: 0 0.5rem; }
+
+    @keyframes tickerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── #1 Boss Glow ── */
+    .podium-card.gold {
+      animation: bossGlow 2s ease-in-out infinite alternate;
+    }
+    @keyframes bossGlow {
+      0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.15), inset 0 0 30px rgba(255, 215, 0, 0.03); }
+      100% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.35), 0 0 80px rgba(255, 215, 0, 0.1), inset 0 0 40px rgba(255, 215, 0, 0.06); }
+    }
+    .podium-card.gold .podium-rank {
+      animation: crownPulse 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes crownPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); filter: brightness(1.3); }
+    }
+
+    /* ── Join CTA ── */
+    .join-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding: 2rem;
+      border: 2px solid var(--neon-green);
+      border-radius: 4px;
+      background: linear-gradient(135deg, rgba(57, 255, 20, 0.03), rgba(0, 240, 255, 0.03));
+      position: relative;
+      overflow: hidden;
+    }
+    .join-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.05), transparent);
+      animation: ctaSweep 3s ease-in-out infinite;
+    }
+    @keyframes ctaSweep {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .join-cta-title {
+      font-family: var(--pixel-font);
+      font-size: 0.85rem;
+      color: var(--neon-green);
+      text-shadow: 0 0 15px var(--neon-green), 0 0 40px rgba(57, 255, 20, 0.3);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    .join-cta-sub {
+      font-family: var(--terminal-font);
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+    .join-cta-btn {
+      display: inline-block;
+      font-family: var(--pixel-font);
+      font-size: 0.6rem;
+      color: #000;
+      background: var(--neon-green);
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-shadow: none;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.3), 0 0 40px rgba(57, 255, 20, 0.1);
+      transition: all 0.2s;
+      position: relative;
+    }
+    .join-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.5), 0 0 60px rgba(57, 255, 20, 0.2);
+    }
+
     /* ── Entry animations ── */
     .fade-in {
       animation: fadeIn 0.5s ease both;
@@ -806,6 +942,12 @@
       <div class="header-live"><span class="dot"></span> LIVE — UPDATED DAILY</div>
     </header>
 
+    <!-- News Ticker -->
+    <div class="ticker-wrap fade-in s1">
+      <div class="ticker-label">LIVE</div>
+      <div class="ticker" id="ticker"></div>
+    </div>
+
     <!-- HUD -->
     <div class="hud" id="statsBar"></div>
 
@@ -822,9 +964,11 @@
         <option value="level">SORT: LEVEL</option>
       </select>
       <button class="ctrl-btn active" data-filter="all">ALL</button>
-      <button class="ctrl-btn" data-filter="10k+">10K+</button>
-      <button class="ctrl-btn" data-filter="1k-10k">1K-10K</button>
-      <button class="ctrl-btn" data-filter="<1k">&lt;1K</button>
+      <button class="ctrl-btn" data-filter="god">💎 GOD MODE</button>
+      <button class="ctrl-btn" data-filter="elite">👾 ELITE</button>
+      <button class="ctrl-btn" data-filter="champion">🛡️ CHAMPION</button>
+      <button class="ctrl-btn" data-filter="beginner">🎮 BEGINNER</button>
+      <button class="ctrl-btn" data-filter="noob">🌱 NOOB</button>
     </div>
 
     <!-- Podium -->
@@ -842,6 +986,13 @@
         <div>LVL</div>
       </div>
       <div id="leaderboardBody"></div>
+    </div>
+
+    <!-- Join CTA -->
+    <div class="join-cta fade-in">
+      <div class="join-cta-title">JOIN THE ARENA</div>
+      <div class="join-cta-sub">Type !join @yourhandle in the Growth Mastery Discord</div>
+      <a href="https://discord.gg/growthmastery" target="_blank" class="join-cta-btn">ENTER DISCORD</a>
     </div>
 
     <div class="last-updated" id="lastUpdated"></div>
@@ -945,9 +1096,11 @@
         const q = searchQuery.toLowerCase();
         f = f.filter(m => m.username.toLowerCase().includes(q) || m.handle.toLowerCase().includes(q) || m.niche.toLowerCase().includes(q));
       }
-      if (currentFilter === '10k+') f = f.filter(m => m.followers >= 10000);
-      else if (currentFilter === '1k-10k') f = f.filter(m => m.followers >= 1000 && m.followers < 10000);
-      else if (currentFilter === '<1k') f = f.filter(m => m.followers < 1000);
+      if (currentFilter === 'god') f = f.filter(m => m.followers >= 1000000);
+      else if (currentFilter === 'elite') f = f.filter(m => m.followers >= 500000 && m.followers < 1000000);
+      else if (currentFilter === 'champion') f = f.filter(m => m.followers >= 100000 && m.followers < 500000);
+      else if (currentFilter === 'beginner') f = f.filter(m => m.followers >= 10000 && m.followers < 100000);
+      else if (currentFilter === 'noob') f = f.filter(m => m.followers < 10000);
 
       f.sort((a, b) => {
         switch (currentSort) {
@@ -964,13 +1117,20 @@
     function renderStats() {
       const tot = members.reduce((s, m) => s + m.followers, 0);
       const totG = members.reduce((s, m) => s + growth(m), 0);
-      const avgG = members.length ? (members.reduce((s, m) => s + growthPct(m), 0) / members.length).toFixed(1) : 0;
+      const avgG = members.length ? (members.reduce((s, m) => s + growthPct(m), 0) / members.length) : 0;
       document.getElementById('statsBar').innerHTML = `
-        <div class="hud-card hud-blue fade-in s1"><div class="hud-value">${members.length}</div><div class="hud-label">PLAYERS</div></div>
-        <div class="hud-card hud-green fade-in s2"><div class="hud-value">${fmt(tot)}</div><div class="hud-label">TOTAL SCORE</div></div>
-        <div class="hud-card hud-yellow fade-in s3"><div class="hud-value">+${fmt(totG)}</div><div class="hud-label">DAILY XP</div></div>
-        <div class="hud-card hud-pink fade-in s4"><div class="hud-value">${avgG}%</div><div class="hud-label">AVG POWER</div></div>
+        <div class="hud-card hud-blue fade-in s1"><div class="hud-value" id="stat-players">0</div><div class="hud-label">PLAYERS</div></div>
+        <div class="hud-card hud-green fade-in s2"><div class="hud-value" id="stat-total">0</div><div class="hud-label">TOTAL SCORE</div></div>
+        <div class="hud-card hud-yellow fade-in s3"><div class="hud-value" id="stat-growth">0</div><div class="hud-label">DAILY XP</div></div>
+        <div class="hud-card hud-pink fade-in s4"><div class="hud-value" id="stat-avg">0%</div><div class="hud-label">AVG POWER</div></div>
       `;
+      // Trigger count-up animations
+      setTimeout(() => {
+        animateCount(document.getElementById('stat-players'), members.length);
+        animateCount(document.getElementById('stat-total'), tot);
+        animateCount(document.getElementById('stat-growth'), totG, '+');
+        animateCount(document.getElementById('stat-avg'), avgG, '', '%');
+      }, 200);
     }
 
     function renderPodium() {
@@ -1103,7 +1263,76 @@
       setTimeout(() => t.classList.remove('show'), 3000);
     }
 
-    function render() { renderStats(); renderPodium(); renderLeaderboard(); }
+    function renderTicker() {
+      const sorted = [...members].sort((a, b) => b.followers - a.followers);
+      const items = [];
+
+      // Total players
+      items.push(`<span class="highlight">${members.length} PLAYERS</span> IN THE ARENA`);
+
+      // Total followers
+      const total = members.reduce((s, m) => s + m.followers, 0);
+      items.push(`<span class="gold">${fmt(total)}</span> COMBINED FOLLOWERS`);
+
+      // God mode players
+      const gods = sorted.filter(m => m.followers >= 1000000);
+      if (gods.length) items.push(`<span class="gold">${gods.length} PLAYER${gods.length > 1 ? 'S' : ''}</span> IN GOD MODE`);
+
+      // Biggest grower
+      const topGrower = [...members].sort((a, b) => growth(b) - growth(a))[0];
+      if (topGrower && growth(topGrower) > 0) {
+        items.push(`<span class="highlight">${topGrower.handle}</span> grew <span class="pink">+${fmt(growth(topGrower))}</span> today`);
+      }
+
+      // Top 3 callouts
+      sorted.slice(0, 3).forEach((m, i) => {
+        const medals = ['#1', '#2', '#3'];
+        items.push(`<span class="gold">${medals[i]}</span> ${m.handle} — <span class="highlight">${fmt(m.followers)}</span>`);
+      });
+
+      // Longest streak
+      const streakKing = [...members].sort((a, b) => b.streak - a.streak)[0];
+      if (streakKing && streakKing.streak > 0) {
+        items.push(`<span class="pink">${streakKing.handle}</span> on a <span class="highlight">x${streakKing.streak}</span> streak`);
+      }
+
+      // New players (joined today)
+      const today = new Date().toISOString().split('T')[0];
+      const newPlayers = members.filter(m => m.joinedDate === today);
+      if (newPlayers.length) {
+        items.push(`<span class="highlight">${newPlayers.length} NEW PLAYER${newPlayers.length > 1 ? 'S' : ''}</span> JOINED TODAY`);
+      }
+
+      // Duplicate items for seamless loop
+      const html = items.map(t => `<span class="ticker-item">${t}<span class="sep">//</span></span>`).join('');
+      document.getElementById('ticker').innerHTML = html + html;
+    }
+
+    // Count-up animation for HUD stats
+    function animateCount(el, target, prefix = '', suffix = '') {
+      const duration = 1200;
+      const start = performance.now();
+      const isDecimal = suffix === '%';
+
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = eased * target;
+
+        if (isDecimal) {
+          el.textContent = prefix + current.toFixed(1) + suffix;
+        } else {
+          el.textContent = prefix + fmt(Math.round(current));
+        }
+
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    function render() { renderTicker(); renderStats(); renderPodium(); renderLeaderboard(); }
 
     // Events
     document.getElementById('searchInput').addEventListener('input', e => { searchQuery = e.target.value; renderLeaderboard(); });
