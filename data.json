@@ -678,6 +678,18 @@
         "1k_club"
       ],
       "niche": "General"
+    },
+    {
+      "id": 45,
+      "username": "Women Empowerment Mindset",
+      "handle": "@thebetterfemme",
+      "avatar": "avatars/thebetterfemme.jpg",
+      "followers": 183,
+      "previousFollowers": 0,
+      "joinedDate": "2026-04-13",
+      "streak": 1,
+      "badges": ["newcomer"],
+      "niche": "General"
     }
   ]
 }
