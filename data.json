@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-05-09T21:48:28.587250Z",
+  "lastUpdated": "2026-05-10T17:20:45.116487Z",
   "members": [
     {
       "id": 1,
       "username": "Comecou",
       "handle": "@comecou",
       "avatar": "avatars/comecou.jpg",
-      "followers": 7179297,
-      "previousFollowers": 7184589,
+      "followers": 7178659,
+      "previousFollowers": 7179297,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Motivation"
     },
@@ -23,13 +23,13 @@
       "handle": "@mindsetraptors",
       "avatar": "avatars/mindsetraptors.jpg",
       "followers": 0,
-      "previousFollowers": 1483813,
+      "previousFollowers": 0,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Motivation"
     },
@@ -38,14 +38,14 @@
       "username": "Business Edge X",
       "handle": "@businessedgex",
       "avatar": "avatars/businessedgex.jpg",
-      "followers": 0,
-      "previousFollowers": 629539,
+      "followers": 628676,
+      "previousFollowers": 0,
       "joinedDate": "2026-04-11",
-      "streak": 0,
+      "streak": 1,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Finance"
     },
@@ -54,14 +54,14 @@
       "username": "Opus Reality",
       "handle": "@opusreality",
       "avatar": "avatars/opusreality.jpg",
-      "followers": 993750,
-      "previousFollowers": 993824,
+      "followers": 993700,
+      "previousFollowers": 993750,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Motivation"
     },
@@ -70,14 +70,14 @@
       "username": "The Philosopher Art",
       "handle": "@thephilosophart",
       "avatar": "avatars/thephilosophart.jpg",
-      "followers": 644866,
-      "previousFollowers": 645452,
+      "followers": 644871,
+      "previousFollowers": 644866,
       "joinedDate": "2026-04-11",
-      "streak": 0,
+      "streak": 1,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Lifestyle"
     },
@@ -86,14 +86,14 @@
       "username": "Yoga Daily Practice",
       "handle": "@yogadailypractice",
       "avatar": "avatars/yogadailypractice.jpg",
-      "followers": 2715268,
-      "previousFollowers": 2716558,
+      "followers": 2715772,
+      "previousFollowers": 2715268,
       "joinedDate": "2026-04-11",
-      "streak": 0,
+      "streak": 1,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Health"
     },
@@ -102,14 +102,14 @@
       "username": "Wealthy Motivated",
       "handle": "@wealthymotivated",
       "avatar": "avatars/wealthymotivated.jpg",
-      "followers": 406271,
-      "previousFollowers": 406219,
+      "followers": 406702,
+      "previousFollowers": 406271,
       "joinedDate": "2026-04-11",
-      "streak": 12,
+      "streak": 13,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Finance"
     },
@@ -118,14 +118,14 @@
       "username": "Execute",
       "handle": "@execute",
       "avatar": "avatars/execute.jpg",
-      "followers": 280061,
-      "previousFollowers": 266128,
+      "followers": 281462,
+      "previousFollowers": 280061,
       "joinedDate": "2026-04-11",
-      "streak": 9,
+      "streak": 10,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Motivation"
     },
@@ -134,14 +134,14 @@
       "username": "Wifi Aesthetics",
       "handle": "@wifiaesthetics",
       "avatar": "avatars/wifiaesthetics.jpg",
-      "followers": 1337992,
-      "previousFollowers": 1339499,
+      "followers": 1338034,
+      "previousFollowers": 1337992,
       "joinedDate": "2026-04-11",
-      "streak": 0,
+      "streak": 1,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "Lifestyle"
     },
@@ -150,14 +150,14 @@
       "username": "Women Empowerment | Motivation | Success",
       "handle": "@femalevalues",
       "avatar": "avatars/femalevalues.jpg",
-      "followers": 339121,
-      "previousFollowers": 328053,
+      "followers": 340425,
+      "previousFollowers": 339121,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -166,14 +166,14 @@
       "username": "Victorian Poetry",
       "handle": "@victorianpoetry",
       "avatar": "avatars/victorianpoetry.jpg",
-      "followers": 1167984,
-      "previousFollowers": 1152140,
+      "followers": 1170570,
+      "previousFollowers": 1167984,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -182,14 +182,14 @@
       "username": "Brandify - Branding & Marketing",
       "handle": "@brandify.ideas",
       "avatar": "avatars/brandify.ideas.jpg",
-      "followers": 474810,
-      "previousFollowers": 470849,
+      "followers": 475460,
+      "previousFollowers": 474810,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -199,7 +199,7 @@
       "handle": "@finance.set",
       "avatar": "avatars/finance.set.jpg",
       "followers": 25,
-      "previousFollowers": 23,
+      "previousFollowers": 25,
       "joinedDate": "2026-04-11",
       "streak": 5,
       "badges": [
@@ -212,14 +212,14 @@
       "username": "MOTIVATION | MINDSET | SUCCESS",
       "handle": "@inspi",
       "avatar": "avatars/inspi.jpg",
-      "followers": 499956,
-      "previousFollowers": 500778,
+      "followers": 499917,
+      "previousFollowers": 499956,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -233,9 +233,9 @@
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -244,10 +244,10 @@
       "username": "Wealth | Business | Finance",
       "handle": "@profitlogics",
       "avatar": "avatars/profitlogics.jpg",
-      "followers": 10113,
-      "previousFollowers": 9567,
+      "followers": 10148,
+      "previousFollowers": 10113,
       "joinedDate": "2026-04-11",
-      "streak": 10,
+      "streak": 11,
       "badges": [
         "1k_club",
         "10k_club"
@@ -259,14 +259,14 @@
       "username": "Dominating Motivation",
       "handle": "@dominatingmotivation",
       "avatar": "avatars/dominatingmotivation.jpg",
-      "followers": 802205,
-      "previousFollowers": 803245,
+      "followers": 802147,
+      "previousFollowers": 802205,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -275,14 +275,14 @@
       "username": "Wealth | Entrepreneur | Mindset",
       "handle": "@alignfortunes",
       "avatar": "avatars/alignfortunes.jpg",
-      "followers": 114126,
-      "previousFollowers": 108658,
+      "followers": 114590,
+      "previousFollowers": 114126,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -291,10 +291,10 @@
       "username": "Entrepreneur.Circle",
       "handle": "@entrepreneur.circle",
       "avatar": "avatars/entrepreneur.circle.jpg",
-      "followers": 72695,
-      "previousFollowers": 72011,
+      "followers": 72748,
+      "previousFollowers": 72695,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
         "1k_club",
         "10k_club"
@@ -306,14 +306,14 @@
       "username": "Motivify\u2122 | Motivation | Mindset",
       "handle": "@bymotivify",
       "avatar": "avatars/bymotivify.jpg",
-      "followers": 661921,
-      "previousFollowers": 662711,
+      "followers": 661826,
+      "previousFollowers": 661921,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -322,14 +322,14 @@
       "username": "Inspiration | Beziehung | Positivit\u00e4t",
       "handle": "@daserfolgskraftwerk",
       "avatar": "avatars/daserfolgskraftwerk.jpg",
-      "followers": 105781,
-      "previousFollowers": 104862,
+      "followers": 105994,
+      "previousFollowers": 105781,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -338,14 +338,14 @@
       "username": "\ud835\udda5\ud835\uddc8\ud835\uddcb \ud835\uddb3\ud835\uddc1\ud835\uddc2\ud835\uddc7\ud835\uddc4\ud835\uddc2\ud835\uddc7\ud835\uddc0 \ud835\uddac\ud835\uddc2\ud835\uddc7\ud835\uddbd\ud835\uddcc",
       "handle": "@forthinkingminds",
       "avatar": "avatars/forthinkingminds.jpg",
-      "followers": 0,
-      "previousFollowers": 840199,
+      "followers": 839818,
+      "previousFollowers": 0,
       "joinedDate": "2026-04-11",
-      "streak": 0,
+      "streak": 1,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -354,14 +354,14 @@
       "username": "BUSINESS | MOTIVATION | DISCIPLINE",
       "handle": "@moneyciety",
       "avatar": "avatars/moneyciety.jpg",
-      "followers": 392580,
-      "previousFollowers": 393418,
+      "followers": 392480,
+      "previousFollowers": 392580,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -371,7 +371,7 @@
       "handle": "@regnummentis",
       "avatar": "avatars/regnummentis.jpg",
       "followers": 0,
-      "previousFollowers": 87075,
+      "previousFollowers": 0,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -385,14 +385,14 @@
       "username": "Aroundvalue\u2122",
       "handle": "@aroundvalue",
       "avatar": "avatars/aroundvalue.jpg",
-      "followers": 458595,
-      "previousFollowers": 458483,
+      "followers": 458643,
+      "previousFollowers": 458595,
       "joinedDate": "2026-04-11",
-      "streak": 3,
+      "streak": 4,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -401,14 +401,14 @@
       "username": "RiseVity\u2122 | Mindset | Success | Awareness",
       "handle": "@risevity",
       "avatar": "avatars/risevity.jpg",
-      "followers": 305453,
-      "previousFollowers": 305608,
+      "followers": 305435,
+      "previousFollowers": 305453,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -417,14 +417,14 @@
       "username": "Female Empowerment | Business I Mindset",
       "handle": "@femalehustleclub",
       "avatar": "avatars/femalehustleclub.jpg",
-      "followers": 518577,
-      "previousFollowers": 516710,
+      "followers": 518644,
+      "previousFollowers": 518577,
       "joinedDate": "2026-04-11",
-      "streak": 11,
+      "streak": 12,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -433,14 +433,14 @@
       "username": "Khalil Mohtar",
       "handle": "@virtuelux",
       "avatar": "avatars/virtuelux.jpg",
-      "followers": 274667,
-      "previousFollowers": 275334,
+      "followers": 274598,
+      "previousFollowers": 274667,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -454,9 +454,9 @@
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -465,14 +465,14 @@
       "username": "Elevateshift\u2122",
       "handle": "@elevateshift",
       "avatar": "avatars/elevateshift.jpg",
-      "followers": 766571,
-      "previousFollowers": 765385,
+      "followers": 766569,
+      "previousFollowers": 766571,
       "joinedDate": "2026-04-11",
-      "streak": 2,
+      "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -481,14 +481,14 @@
       "username": "Because We're Females",
       "handle": "@causewerefemales",
       "avatar": "avatars/causewerefemales.jpg",
-      "followers": 567260,
-      "previousFollowers": 571677,
+      "followers": 567223,
+      "previousFollowers": 567260,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -497,14 +497,14 @@
       "username": "elitesmindsetz",
       "handle": "@elitesmindsetz",
       "avatar": "avatars/elitesmindsetz.jpg",
-      "followers": 119767,
-      "previousFollowers": 119733,
+      "followers": 119727,
+      "previousFollowers": 119767,
       "joinedDate": "2026-04-11",
-      "streak": 1,
+      "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -513,14 +513,14 @@
       "username": "Confidently Chick\u00ae | Women's Success",
       "handle": "@confidentlychick",
       "avatar": "avatars/confidentlychick.jpg",
-      "followers": 137060,
-      "previousFollowers": 137136,
+      "followers": 137046,
+      "previousFollowers": 137060,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -529,14 +529,14 @@
       "username": "Business | News | Motivation",
       "handle": "@monee_hub",
       "avatar": "avatars/monee_hub.jpg",
-      "followers": 211168,
-      "previousFollowers": 211732,
+      "followers": 211072,
+      "previousFollowers": 211168,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -545,14 +545,14 @@
       "username": "Motivation \ud83d\ude80 Success \ud83d\udc8e Money \ud83d\udcb0",
       "handle": "@multimillionaire_mind",
       "avatar": "avatars/multimillionaire_mind.jpg",
-      "followers": 355804,
-      "previousFollowers": 354932,
+      "followers": 355920,
+      "previousFollowers": 355804,
       "joinedDate": "2026-04-11",
-      "streak": 5,
+      "streak": 6,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -561,14 +561,14 @@
       "username": "BYPR.",
       "handle": "@bypreneurs",
       "avatar": "avatars/bypreneurs.jpg",
-      "followers": 539186,
-      "previousFollowers": 535440,
+      "followers": 539266,
+      "previousFollowers": 539186,
       "joinedDate": "2026-04-11",
-      "streak": 12,
+      "streak": 13,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -577,14 +577,14 @@
       "username": "MoisFearless | Self Improvement Content",
       "handle": "@moisfearless",
       "avatar": "avatars/moisfearless.jpg",
-      "followers": 1088244,
-      "previousFollowers": 1089669,
+      "followers": 1088147,
+      "previousFollowers": 1088244,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -593,14 +593,14 @@
       "username": "Business | Inspire",
       "handle": "@hustlingroute_",
       "avatar": "avatars/hustlingroute_.jpg",
-      "followers": 499493,
-      "previousFollowers": 500326,
+      "followers": 499531,
+      "previousFollowers": 499493,
       "joinedDate": "2026-04-11",
-      "streak": 0,
+      "streak": 1,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -609,14 +609,14 @@
       "username": "Harry Words",
       "handle": "@words.of.harry",
       "avatar": "avatars/words.of.harry.jpg",
-      "followers": 218075,
-      "previousFollowers": 216891,
+      "followers": 218224,
+      "previousFollowers": 218075,
       "joinedDate": "2026-04-11",
-      "streak": 6,
+      "streak": 7,
       "badges": [
+        "100k_club",
         "1k_club",
-        "10k_club",
-        "100k_club"
+        "10k_club"
       ],
       "niche": "General"
     },
@@ -625,8 +625,8 @@
       "username": "STOICISM | MOTIVATION",
       "handle": "@a.stoics.feed",
       "avatar": "avatars/a.stoics.feed.jpg",
-      "followers": 13638,
-      "previousFollowers": 13666,
+      "followers": 13634,
+      "previousFollowers": 13638,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -640,10 +640,10 @@
       "username": "Thinking Minds",
       "handle": "@thinking.minds.page",
       "avatar": "avatars/thinking.minds.page.jpg",
-      "followers": 1562,
-      "previousFollowers": 1560,
+      "followers": 1564,
+      "previousFollowers": 1562,
       "joinedDate": "2026-04-11",
-      "streak": 6,
+      "streak": 7,
       "badges": [
         "1k_club"
       ],
@@ -668,10 +668,10 @@
       "username": "Entrepreneurship | Business | Wealth",
       "handle": "@capitalpaths",
       "avatar": "avatars/capitalpaths.jpg",
-      "followers": 19638,
-      "previousFollowers": 19457,
+      "followers": 19662,
+      "previousFollowers": 19638,
       "joinedDate": "2026-04-13",
-      "streak": 9,
+      "streak": 10,
       "badges": [
         "1k_club",
         "10k_club"
@@ -683,10 +683,10 @@
       "username": "Feminine Self Worth",
       "handle": "@feminworth",
       "avatar": "avatars/feminworth.jpg",
-      "followers": 697,
-      "previousFollowers": 239,
+      "followers": 711,
+      "previousFollowers": 697,
       "joinedDate": "2026-04-13",
-      "streak": 7,
+      "streak": 8,
       "badges": [
         "newcomer"
       ],
