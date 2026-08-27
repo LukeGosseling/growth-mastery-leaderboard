@@ -460,6 +460,142 @@
         "10k_club"
       ],
       "niche": "General"
+    },
+    {
+      "id": 48,
+      "username": "Investing I Finance I Wealth",
+      "handle": "@goodwithinvesting",
+      "avatar": "avatars/goodwithinvesting.jpg",
+      "followers": 362850,
+      "previousFollowers": 362850,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 49,
+      "username": "Health I Wellbeing I Vitality",
+      "handle": "@corehealthway",
+      "avatar": "avatars/corehealthway.jpg",
+      "followers": 668647,
+      "previousFollowers": 668647,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Health"
+    },
+    {
+      "id": 50,
+      "username": "romances",
+      "handle": "@romances",
+      "avatar": "avatars/romances.jpg",
+      "followers": 627368,
+      "previousFollowers": 627368,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Lifestyle"
+    },
+    {
+      "id": 51,
+      "username": "HyperTech | Tech News",
+      "handle": "@techskills",
+      "avatar": "avatars/techskills.jpg",
+      "followers": 1532133,
+      "previousFollowers": 1532133,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "General"
+    },
+    {
+      "id": 52,
+      "username": "HyperTech | Tech News",
+      "handle": "@hypertech",
+      "avatar": "avatars/hypertech.jpg",
+      "followers": 1300294,
+      "previousFollowers": 1300294,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "General"
+    },
+    {
+      "id": 53,
+      "username": "Business | Finance | Wealth",
+      "handle": "@businessedgex",
+      "avatar": "avatars/businessedgex.jpg",
+      "followers": 623927,
+      "previousFollowers": 623927,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 54,
+      "username": "PROJECT MELIORA",
+      "handle": "@projectmeliora_",
+      "avatar": "avatars/projectmeliora_.jpg",
+      "followers": 470380,
+      "previousFollowers": 470380,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 55,
+      "username": "Vawzen\u2122 | Motivation | Discipline | Wisdom",
+      "handle": "@vawzen",
+      "avatar": "avatars/vawzen.jpg",
+      "followers": 1610128,
+      "previousFollowers": 1610128,
+      "joinedDate": "2026-08-27",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "General"
     }
   ]
 }
