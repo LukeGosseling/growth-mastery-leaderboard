@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-26T15:23:34.819605Z",
+  "lastUpdated": "2026-08-27T10:58:29.399612Z",
   "members": [
     {
       "id": 1,
@@ -7,7 +7,7 @@
       "handle": "@comecou",
       "avatar": "avatars/comecou.jpg",
       "followers": 7016090,
-      "previousFollowers": 7085869,
+      "previousFollowers": 7016090,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -23,7 +23,7 @@
       "handle": "@opusreality",
       "avatar": "avatars/opusreality.jpg",
       "followers": 983095,
-      "previousFollowers": 991020,
+      "previousFollowers": 983095,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -39,9 +39,9 @@
       "handle": "@yogadailypractice",
       "avatar": "avatars/yogadailypractice.jpg",
       "followers": 2900160,
-      "previousFollowers": 2714556,
+      "previousFollowers": 2900160,
       "joinedDate": "2026-04-11",
-      "streak": 2,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -54,8 +54,8 @@
       "username": "Execute",
       "handle": "@execute",
       "avatar": "avatars/execute.jpg",
-      "followers": 563196,
-      "previousFollowers": 563196,
+      "followers": 786000,
+      "previousFollowers": 786000,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -71,7 +71,7 @@
       "handle": "@wifiaesthetics",
       "avatar": "avatars/wifiaesthetics.jpg",
       "followers": 1312981,
-      "previousFollowers": 1331931,
+      "previousFollowers": 1312981,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -87,7 +87,7 @@
       "handle": "@femalevalues",
       "avatar": "avatars/femalevalues.jpg",
       "followers": 337324,
-      "previousFollowers": 340816,
+      "previousFollowers": 337324,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -103,9 +103,9 @@
       "handle": "@victorianpoetry",
       "avatar": "avatars/victorianpoetry.jpg",
       "followers": 2433627,
-      "previousFollowers": 1535506,
+      "previousFollowers": 2433627,
       "joinedDate": "2026-04-11",
-      "streak": 15,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -119,9 +119,9 @@
       "handle": "@brandify.ideas",
       "avatar": "avatars/brandify.ideas.jpg",
       "followers": 499651,
-      "previousFollowers": 496392,
+      "previousFollowers": 499651,
       "joinedDate": "2026-04-11",
-      "streak": 15,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -135,9 +135,9 @@
       "handle": "@inspi",
       "avatar": "avatars/inspi.jpg",
       "followers": 830039,
-      "previousFollowers": 499235,
+      "previousFollowers": 830039,
       "joinedDate": "2026-04-11",
-      "streak": 1,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -151,7 +151,7 @@
       "handle": "@girlieceo",
       "avatar": "avatars/girlieceo.jpg",
       "followers": 456650,
-      "previousFollowers": 460633,
+      "previousFollowers": 456650,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -167,9 +167,9 @@
       "handle": "@alignfortunes",
       "avatar": "avatars/alignfortunes.jpg",
       "followers": 165360,
-      "previousFollowers": 137951,
+      "previousFollowers": 165360,
       "joinedDate": "2026-04-11",
-      "streak": 15,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -183,9 +183,9 @@
       "handle": "@entrepreneur.circle",
       "avatar": "avatars/entrepreneur.circle.jpg",
       "followers": 80360,
-      "previousFollowers": 79624,
+      "previousFollowers": 80360,
       "joinedDate": "2026-04-11",
-      "streak": 15,
+      "streak": 0,
       "badges": [
         "1k_club",
         "10k_club"
@@ -198,7 +198,7 @@
       "handle": "@bymotivify",
       "avatar": "avatars/bymotivify.jpg",
       "followers": 656251,
-      "previousFollowers": 658298,
+      "previousFollowers": 656251,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -214,9 +214,9 @@
       "handle": "@daserfolgskraftwerk",
       "avatar": "avatars/daserfolgskraftwerk.jpg",
       "followers": 208368,
-      "previousFollowers": 173338,
+      "previousFollowers": 208368,
       "joinedDate": "2026-04-11",
-      "streak": 15,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -230,9 +230,9 @@
       "handle": "@moneyciety",
       "avatar": "avatars/moneyciety.jpg",
       "followers": 393560,
-      "previousFollowers": 386561,
+      "previousFollowers": 393560,
       "joinedDate": "2026-04-11",
-      "streak": 1,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -246,9 +246,9 @@
       "handle": "@regnummentis",
       "avatar": "avatars/regnummentis.jpg",
       "followers": 158252,
-      "previousFollowers": 136635,
+      "previousFollowers": 158252,
       "joinedDate": "2026-04-11",
-      "streak": 3,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -262,7 +262,7 @@
       "handle": "@aroundvalue",
       "avatar": "avatars/aroundvalue.jpg",
       "followers": 456301,
-      "previousFollowers": 462760,
+      "previousFollowers": 456301,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -278,9 +278,9 @@
       "handle": "@femalehustleclub",
       "avatar": "avatars/femalehustleclub.jpg",
       "followers": 555427,
-      "previousFollowers": 541399,
+      "previousFollowers": 555427,
       "joinedDate": "2026-04-11",
-      "streak": 15,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -310,7 +310,7 @@
       "handle": "@causewerefemales",
       "avatar": "avatars/causewerefemales.jpg",
       "followers": 563629,
-      "previousFollowers": 563832,
+      "previousFollowers": 563629,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -326,7 +326,7 @@
       "handle": "@elitesmindsetz",
       "avatar": "avatars/elitesmindsetz.jpg",
       "followers": 115973,
-      "previousFollowers": 117643,
+      "previousFollowers": 115973,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -342,7 +342,7 @@
       "handle": "@confidentlychick",
       "avatar": "avatars/confidentlychick.jpg",
       "followers": 136423,
-      "previousFollowers": 136771,
+      "previousFollowers": 136423,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -374,9 +374,9 @@
       "handle": "@multimillionaire_mind",
       "avatar": "avatars/multimillionaire_mind.jpg",
       "followers": 424401,
-      "previousFollowers": 385263,
+      "previousFollowers": 424401,
       "joinedDate": "2026-04-11",
-      "streak": 1,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -390,7 +390,7 @@
       "handle": "@bypreneurs",
       "avatar": "avatars/bypreneurs.jpg",
       "followers": 541833,
-      "previousFollowers": 544691,
+      "previousFollowers": 541833,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -406,9 +406,9 @@
       "handle": "@words.of.harry",
       "avatar": "avatars/words.of.harry.jpg",
       "followers": 289349,
-      "previousFollowers": 274415,
+      "previousFollowers": 289349,
       "joinedDate": "2026-04-11",
-      "streak": 10,
+      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -422,7 +422,7 @@
       "handle": "@thebetterfemme",
       "avatar": "avatars/thebetterfemme.jpg",
       "followers": 195,
-      "previousFollowers": 199,
+      "previousFollowers": 195,
       "joinedDate": "2026-04-13",
       "streak": 0,
       "badges": [
@@ -436,9 +436,9 @@
       "handle": "@capitalpaths",
       "avatar": "avatars/capitalpaths.jpg",
       "followers": 81486,
-      "previousFollowers": 33928,
+      "previousFollowers": 81486,
       "joinedDate": "2026-04-13",
-      "streak": 13,
+      "streak": 0,
       "badges": [
         "1k_club",
         "10k_club"
@@ -451,9 +451,9 @@
       "handle": "@feminworth",
       "avatar": "avatars/feminworth.jpg",
       "followers": 18961,
-      "previousFollowers": 1879,
+      "previousFollowers": 18961,
       "joinedDate": "2026-04-13",
-      "streak": 11,
+      "streak": 0,
       "badges": [
         "1k_club",
         "newcomer",
