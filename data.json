@@ -34,22 +34,6 @@
       "niche": "Motivation"
     },
     {
-      "id": 5,
-      "username": "The Philosopher Art",
-      "handle": "@thephilosophart",
-      "avatar": "avatars/thephilosophart.jpg",
-      "followers": 636760,
-      "previousFollowers": 636760,
-      "joinedDate": "2026-04-11",
-      "streak": 0,
-      "badges": [
-        "1k_club",
-        "100k_club",
-        "10k_club"
-      ],
-      "niche": "Lifestyle"
-    },
-    {
       "id": 6,
       "username": "Yoga Daily Practice",
       "handle": "@yogadailypractice",
@@ -146,20 +130,6 @@
       "niche": "General"
     },
     {
-      "id": 15,
-      "username": "Business | Finances | Growth",
-      "handle": "@finance.set",
-      "avatar": "avatars/finance.set.jpg",
-      "followers": 24,
-      "previousFollowers": 23,
-      "joinedDate": "2026-04-11",
-      "streak": 1,
-      "badges": [
-        "newcomer"
-      ],
-      "niche": "General"
-    },
-    {
       "id": 16,
       "username": "MOTIVATION | MINDSET | SUCCESS",
       "handle": "@inspi",
@@ -182,37 +152,6 @@
       "avatar": "avatars/girlieceo.jpg",
       "followers": 456650,
       "previousFollowers": 460633,
-      "joinedDate": "2026-04-11",
-      "streak": 0,
-      "badges": [
-        "1k_club",
-        "100k_club",
-        "10k_club"
-      ],
-      "niche": "General"
-    },
-    {
-      "id": 18,
-      "username": "Wealth | Business | Finance",
-      "handle": "@profitlogics",
-      "avatar": "avatars/profitlogics.jpg",
-      "followers": 12850,
-      "previousFollowers": 12850,
-      "joinedDate": "2026-04-11",
-      "streak": 0,
-      "badges": [
-        "1k_club",
-        "10k_club"
-      ],
-      "niche": "General"
-    },
-    {
-      "id": 19,
-      "username": "Dominating Motivation",
-      "handle": "@dominatingmotivation",
-      "avatar": "avatars/dominatingmotivation.jpg",
-      "followers": 788262,
-      "previousFollowers": 794753,
       "joinedDate": "2026-04-11",
       "streak": 0,
       "badges": [
@@ -278,22 +217,6 @@
       "previousFollowers": 173338,
       "joinedDate": "2026-04-11",
       "streak": 15,
-      "badges": [
-        "1k_club",
-        "100k_club",
-        "10k_club"
-      ],
-      "niche": "General"
-    },
-    {
-      "id": 24,
-      "username": "\ud835\udda5\ud835\uddc8\ud835\uddcb \ud835\uddb3\ud835\uddc1\ud835\uddc2\ud835\uddc7\ud835\uddc4\ud835\uddc2\ud835\uddc7\ud835\uddc0 \ud835\uddac\ud835\uddc2\ud835\uddc7\ud835\uddbd\ud835\uddcc",
-      "handle": "@forthinkingminds",
-      "avatar": "avatars/forthinkingminds.jpg",
-      "followers": 828764,
-      "previousFollowers": 828764,
-      "joinedDate": "2026-04-11",
-      "streak": 0,
       "badges": [
         "1k_club",
         "100k_club",
@@ -478,22 +401,6 @@
       "niche": "General"
     },
     {
-      "id": 42,
-      "username": "MoisFearless | Self Improvement Content",
-      "handle": "@moisfearless",
-      "avatar": "avatars/moisfearless.jpg",
-      "followers": 1075315,
-      "previousFollowers": 1075315,
-      "joinedDate": "2026-04-11",
-      "streak": 0,
-      "badges": [
-        "1k_club",
-        "100k_club",
-        "10k_club"
-      ],
-      "niche": "General"
-    },
-    {
       "id": 44,
       "username": "Harry Words",
       "handle": "@words.of.harry",
@@ -505,21 +412,6 @@
       "badges": [
         "1k_club",
         "100k_club",
-        "10k_club"
-      ],
-      "niche": "General"
-    },
-    {
-      "id": 45,
-      "username": "STOICISM | MOTIVATION",
-      "handle": "@a.stoics.feed",
-      "avatar": "avatars/a.stoics.feed.jpg",
-      "followers": 13190,
-      "previousFollowers": 13395,
-      "joinedDate": "2026-04-11",
-      "streak": 0,
-      "badges": [
-        "1k_club",
         "10k_club"
       ],
       "niche": "General"
