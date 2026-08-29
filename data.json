@@ -417,20 +417,6 @@
       "niche": "General"
     },
     {
-      "id": 45,
-      "username": "Women Empowerment Mindset",
-      "handle": "@thebetterfemme",
-      "avatar": "avatars/thebetterfemme.jpg",
-      "followers": 195,
-      "previousFollowers": 195,
-      "joinedDate": "2026-04-13",
-      "streak": 0,
-      "badges": [
-        "newcomer"
-      ],
-      "niche": "General"
-    },
-    {
       "id": 46,
       "username": "Entrepreneurship | Business | Wealth",
       "handle": "@capitalpaths",
@@ -620,6 +606,57 @@
       "avatar": "avatars/elevation.mindsett.jpg",
       "followers": 537125,
       "previousFollowers": 537125,
+      "joinedDate": "2026-08-29",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 58,
+      "username": "Teach",
+      "handle": "@teach",
+      "avatar": "avatars/teach.jpg",
+      "followers": 1454700,
+      "previousFollowers": 1454700,
+      "joinedDate": "2026-08-29",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 59,
+      "username": "MOTIVATION | MINDSET | SUCCESS",
+      "handle": "@projectinspi",
+      "avatar": "avatars/projectinspi.jpg",
+      "followers": 492239,
+      "previousFollowers": 492239,
+      "joinedDate": "2026-08-29",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 60,
+      "username": "Motivation | Business",
+      "handle": "@createimprovement",
+      "avatar": "avatars/createimprovement.jpg",
+      "followers": 291647,
+      "previousFollowers": 291647,
       "joinedDate": "2026-08-29",
       "streak": 0,
       "badges": [
