@@ -596,6 +596,39 @@
         "100k_club"
       ],
       "niche": "General"
+    },
+    {
+      "id": 56,
+      "username": "Sovereign Success | Solo Leveling | Motivation",
+      "handle": "@sovcess",
+      "avatar": "avatars/sovcess.jpg",
+      "followers": 34125,
+      "previousFollowers": 34125,
+      "joinedDate": "2026-08-29",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club"
+      ],
+      "niche": "Motivation"
+    },
+    {
+      "id": 57,
+      "username": "Elevation Mindset | Anime | Motivation",
+      "handle": "@elevation.mindsett",
+      "avatar": "avatars/elevation.mindsett.jpg",
+      "followers": 537125,
+      "previousFollowers": 537125,
+      "joinedDate": "2026-08-29",
+      "streak": 0,
+      "badges": [
+        "newcomer",
+        "1k_club",
+        "10k_club",
+        "100k_club"
+      ],
+      "niche": "Motivation"
     }
   ]
 }
